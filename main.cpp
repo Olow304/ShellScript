@@ -32,8 +32,11 @@ void prompt_name()
 	char username[1001] = "";
 	gethostname(username, sizeof(username));
 	printf("%s@%s %s > ", getenv("LOGNAME"), username, getcwd(current_pwd, 1024));
-
 }
+
+// CREDIT: https://www.gnu.org/software/libc/manual/html_node/Initializing-the-Shell.html
+// Modified
+// If we used sample code from gnu, do we have to license our code under GPL?
 
 void prompt_init(){
     int C_PID  = getpid();
@@ -43,22 +46,19 @@ void prompt_init(){
 
 		if (prompt_interactive) 
 		{
-			while (tcgetpgrp(STDIN_FILENO) != (GBSH_PGID = getpgrp()))
+			while (tcgetpgrp(STDIN_FILENO) != (b_pgid = getpgrp()))
 					kill(C_PID , SIGTTOU);             
-	   
 			// Put ourselves in our own process group
 			setpgid(C_PID , C_PID ); // we make the shell process the new process
-			GBSH_PGID = getpgrp();
-			if (C_PID  != GBSH_PGID) {
+			b_pgid = getpgrp();
+			if (C_PID  != b_pgid) {
 					printf("Error");
 					exit(EXIT_FAILURE);
 			}
 			// Grab control of the terminal
-			tcsetpgrp(STDIN_FILENO, GBSH_PGID);  
-			
+			tcsetpgrp(STDIN_FILENO, b_pgid);  
 			// Save default terminal attributes for shell
 			tcgetattr(STDIN_FILENO, &GBSH_TMODES);
-
      }
 }
 
