@@ -13,6 +13,9 @@
 
 #include "cd.h"
 #include "init.h"
+#include "exit.h"
+#include "help.h"
+
 extern char** environ;
 
 using namespace std;
@@ -86,10 +89,13 @@ int prompt_handler(char * arg_hdlr[])
 	
 	if(commandHolder == "help") 
 	{
-		cout << "help" << endl;
+		help();
 	}
 	
-
+	else if (commandHolder == "exit")
+	{
+		exit_sh();
+	}
 }
 
 int main(int argc, char *argv[], char **envp)
