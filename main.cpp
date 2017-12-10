@@ -13,14 +13,18 @@
 
 #include "cd.h"
 #include "init.h"
+#include "exit.h"
+#include "help.h"
+
+// MAKE MAKEFILE
+// MAKE README FILE
+
 extern char** environ;
 
 using namespace std;
 
-
 const int INPUT_LIMIT = 256; // max number of tokens for a command
 const int INPUT_MAX_LIME = 1024; // max number of characters from user input
-
 
 const int INPUT_CMD_LENGHT = 128;
 const int HISTORY_COUNT = 20;
@@ -86,10 +90,13 @@ int prompt_handler(char * arg_hdlr[])
 	
 	if(commandHolder == "help") 
 	{
-		cout << "help" << endl;
+		help();
 	}
 	
-
+	else if (commandHolder == "exit")
+	{
+		exit_sh();
+	}
 }
 
 int main(int argc, char *argv[], char **envp)
