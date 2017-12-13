@@ -1,6 +1,5 @@
-## Calssic Shell
+## Classic Shell
 This is a simple classic shell that
-
 
 ## License
 MIT License is applied to. See LICENSE.md.
