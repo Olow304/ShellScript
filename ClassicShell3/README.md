@@ -10,7 +10,10 @@ This shell is build on using C++ programming language
 
 ## Installation
 
-## Extra Credits accompanish
+## Extra Credit
+* Provide a useful prompt (2)
+* Allow assigning variables, e.g. the user enters MY_VAR=hello then you should set the environment variable MY_VAR to have value hello (4)
+* Other features such as handling multiple commands on the same line, piping, redirection can earn up to a total of 8 more bonus points. 
 
 ## Future goals
 
