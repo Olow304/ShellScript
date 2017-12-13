@@ -14,4 +14,4 @@ This shell is build on using C++ programming language
 
 ## Future goals
 
-## We test on Hawk server
+We test on Hawk server
