@@ -9,6 +9,10 @@ MIT License is applied to. See LICENSE.md.
 This shell is build on using C++ programming language
 
 ## Installation
+* Clone github repository
+* Naviage to ShellScript/ClassicShell3
+* Run make
+* Execute the program using ./classicShell
 
 ## Extra Credit
 * Provide a useful prompt (2)
@@ -16,6 +20,5 @@ This shell is build on using C++ programming language
 * Other features such as handling multiple commands on the same line, piping, redirection can earn up to a total of 8 more bonus points. 
 
 ## Future goals
-Our future plan for this project is to implement more features, such as handling history commands, and make more interactive shell.
 
-Our code compiles well on hawk server.
+We test on Hawk server
